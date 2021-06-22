@@ -184,4 +184,4 @@ def sorter_algo(numbers, target):
 
 
 
-algo_compare(100000, 100000)
+algo_compare(5000, 1000) #inputs to this function can be changed to explore the performance of all three algorithms
