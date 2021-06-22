@@ -31,6 +31,9 @@ class Hashtable:
 def algo_compare(size, range_nums, nums=-1, tget=-1):
 
     #This function is used to compare the runtime of hash_algo(), brute_algo(), and sorter_algo().
+    #The number array and target number can be selected by providing an array length and an upper bound on integer values.
+    #Both the array and target number are randomly generated using random.randint(), and any duplicate values in the array are removed
+    #These can also be manually created by passing a list 'nums' and a target integer 'tget' to the function
 
 
     if (nums < 0) or (tget < 0):
@@ -79,12 +82,11 @@ def hash_algo(numbers, target):
     
     #This algorithm takes a list of integers 'numbers' and a target integer 'target' as input.
 
-    #A Hashtable object is created from the list of numbers, and then the problem is solved by
-    #iterating through the list of numbers, getting the difference between the target integer
+    #A Hashtable() object is created from the list of integers, and then the problem is solved by
+    #iterating through the list, getting the difference between the target integer
     #and the list integer, hashing the difference, and then indexing that hash in the hash table.
 
-    #If a 'None' is returned, then the target integer is not a sum of the current list integer and any
-    #other list integer.
+    #If a 'None' is returned, then the target integer is not a sum of the current list integer and any other list integer.
 
     #This algorithm solves the problem in O(n) time, and is the optimal solution.
 
@@ -171,6 +173,7 @@ def sorter_algo(numbers, target):
         search_num = target - sorted_numbers[i]
         for x in range(i+1, num_length):
             if sorted_numbers[x] == search_num:
+                #print("Numbers found: {} = {} + {}".format(target, sorted_numbers[i], search_num))
                 matches+=1
             elif sorted_numbers[x] > search_num:
                 break
