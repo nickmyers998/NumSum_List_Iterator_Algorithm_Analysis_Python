@@ -128,7 +128,8 @@ def brute_algo(numbers, target):
 
 def msort4(x):
 
-    #This is an implementation of merge sort, which runs in O(n log n) time.
+    #This is an implementation of merge sort used for sorter_algo(), which runs in O(n log n) time.
+    #Python's sorted() method performs poorly on large lists, so a merge sort is used instead.
 
     if len(x) < 20:
         return sorted(x)
